@@ -30,9 +30,8 @@ export class MainLayoutComponent {
   );
 
   contentPositionRules = computed(() => {
-    const isCollapsed = this.isCollapsed();
     return {
-      left: isCollapsed ? `${MainLayoutSettings.sidebarCollapsedWidth}px` : `${MainLayoutSettings.sidebarExpandedWidth}px`,
+      left: this.isCollapsed() ? `${MainLayoutSettings.sidebarCollapsedWidth}px` : `${MainLayoutSettings.sidebarExpandedWidth}px`,
       'margin-left': `${MainLayoutSettings.contentMarginOffset}px`
     }
   });
