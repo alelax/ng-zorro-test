@@ -1,0 +1,53 @@
+<nz-layout class="app-layout">
+
+  <nz-sider
+    class="menu-sidebar soft-transition"
+    nzCollapsible
+    nzBreakpoint="md"
+    [nzWidth]="MainLayoutSettings.sidebarExpandedWidth + 'px'"
+    [(nzCollapsed)]="isCollapsed"
+    [nzTrigger]="null"
+    [nzCollapsedWidth]="MainLayoutSettings.sidebarCollapsedWidth"
+  >
+
+    <app-sidebar-menu [isSidenavbarCollapsed]="isCollapsed()"></app-sidebar-menu>
+
+  </nz-sider>
+
+  <nz-layout
+    class="soft-transition"
+    [style.margin-left.px]="calcLayoutMarginLeft()"
+  >
+    <nz-header>
+      <div
+        class="app-header soft-transition"
+        [style.width]="calcHeaderWidth()">
+        <span class="header-trigger soft-transition" (click)="isCollapsed.set(!isCollapsed())">
+          <nz-icon
+            class="trigger"
+            [nzType]="isCollapsed() ? 'menu-unfold' : 'menu-fold'"
+          />
+        </span>
+      </div>
+    </nz-header>
+
+    <header
+      class="secondary-header soft-transition"
+      [style.width]="calcHeaderWidth()"
+    >
+      HEADER SECONDARIO
+    </header>
+
+
+    <nz-content
+      class="app-content"
+      [style]="contentPositionRules()"
+    >
+      <div class="inner-content">
+        <router-outlet></router-outlet>
+      </div>
+    </nz-content>
+
+  </nz-layout>
+
+</nz-layout>

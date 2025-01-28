@@ -1,0 +1,43 @@
+<div class="sidebar-logo soft-transition">
+  <a href="https://ng.ant.design/" target="_blank">
+    <img src="https://ng.ant.design/assets/img/logo.svg" alt="logo">
+    <h1>Ant Design of Angular</h1>
+  </a>
+</div>
+
+
+<ul nz-menu nzTheme="dark" nzMode="inline" [nzInlineCollapsed]="isSidenavbarCollapsed()">
+  <li nz-submenu nzOpen nzTitle="Dashboard" nzIcon="dashboard">
+    <ul>
+      <!--TODO: aggiungere direttiva  quando le rotte saranno definite-->
+      <li nz-menu-item >
+        <a routerLink="/welcome">Welcome</a>
+      </li>
+      <li nz-menu-item >
+        <a>Monitor</a>
+      </li>
+      <li nz-menu-item >
+        <a>Workplace</a>
+      </li>
+      <li nz-submenu nzTitle="Submenu">
+        <ul>
+          <li nz-menu-item>Option 7</li>
+          <li nz-menu-item>Option 8</li>
+          <li nz-submenu nzTitle="Submenu">
+            <ul>
+              <li nz-menu-item>Option 9</li>
+              <li nz-menu-item>Option 10</li>
+            </ul>
+          </li>
+        </ul>
+      </li>
+    </ul>
+  </li>
+  <li nz-submenu nzOpen nzTitle="Form" nzIcon="form">
+    <ul>
+      <li nz-menu-item >
+        <a>Basic Form</a>
+      </li>
+    </ul>
+  </li>
+</ul>
